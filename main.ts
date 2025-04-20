@@ -1,7 +1,7 @@
 // main.ts
 import { Hono } from "jsr:@hono/hono";
 import { streamSSE } from "jsr:@hono/hono/streaming";
-import { encode } from "jsr:@std/encoding/hex";
+import { encodeHex } from "jsr:@std/encoding/hex"; // 修改: encode -> encodeHex
 
 const app = new Hono();
 
@@ -206,7 +206,7 @@ app.get("/", (c) => c.text("Gemini to OpenAI Proxy is running!"));
 function generateRandomId(length = 24): string {
     const buffer = new Uint8Array(Math.ceil(length / 2));
     crypto.getRandomValues(buffer); // [3]
-    return encode(buffer).slice(0, length); // [3]
+    return encodeHex(buffer).slice(0, length); // 修改: encode -> encodeHex
 }
 
 // Start the server
