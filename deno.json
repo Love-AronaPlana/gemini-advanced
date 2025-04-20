@@ -1,0 +1,11 @@
+{
+    "tasks": {
+        "start": "deno run --allow-net --allow-run=python3 --allow-env main.ts",
+        "start:watch": "deno run --watch --allow-net --allow-run=python3 --allow-env main.ts"
+    },
+    "imports": {
+        "jsr:@hono/hono": "jsr:@hono/hono@^4.5.1",
+        "jsr:@hono/hono/streaming": "jsr:@hono/hono@^4.5.1/streaming",
+        "jsr:@std/encoding/hex": "jsr:@std/encoding@^0.224.3/hex"
+    }
+}
